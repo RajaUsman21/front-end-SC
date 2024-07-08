@@ -29,7 +29,9 @@ const SignIn = () => {
           toast.error(response.data.message);
         } else {
           toast.success(response.data.message);
-          navigate("/Dashboard");
+          localStorage.setItem("token",response?.data?.token)
+          localStorage.setItem("isLogin","true");
+          navigate("/");
         }
       } catch (error) {
        

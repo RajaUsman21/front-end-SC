@@ -6,6 +6,7 @@ import {Dashboard} from './pages/Dashboard';
 import HeaderFooterRoute from './components/HeaderFooter';
 import StartupRegistrationForm from './pages/RegisterStartupForm';
 import UserProfileForm from './pages/AdditionalInfo';
+import StartupProfile from './pages/StartupProfile';
 
 
 
@@ -17,6 +18,7 @@ function App() {
       <Route path="/" element={<HeaderFooterRoute><Dashboard/></HeaderFooterRoute>}/>
       <Route path="/register-startup" element={<StartupRegistrationForm/>}/>
       <Route path="/user-profile" element={<UserProfileForm/>}/>
+      <Route path="/startup-profile" element={<StartupProfile/>}/>
 
     </Routes>
   );

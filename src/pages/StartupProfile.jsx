@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Map from "../../components/Map";
+// import Map from "../../components/Map";
 import { useParams } from "react-router-dom";
 import { Vortex } from "react-loader-spinner";
 import axios from "axios";
 
-const UserProfile = (props) => {
+const StartupProfile = (props) => {
   const [selectedLocation, setSelectedLocation] = useState({
     lat: 31.4834,
     lng: 74.3969,
@@ -16,7 +16,7 @@ const UserProfile = (props) => {
   let [isLoading, setIsLoading] = useState(true);
   console.log(user);
 
-  useEffect(() => {
+//   useEffect(() => {
     axios
       .get("http://localhost:3333/user/" + user)
       .then((response) => {
@@ -31,7 +31,7 @@ const UserProfile = (props) => {
         setIsLoading((isLoading = false));
       })
       .catch((e) => console.log(e));
-  }, [user]);
+//   }, [user]);
 
   const styles = {
     container: {
@@ -44,7 +44,7 @@ const UserProfile = (props) => {
 
   return (
     <>
-      {isLoading ? (
+      {/* {isLoading ? (
         <div style={styles.container}>
           <Vortex
             visible={true}
@@ -56,7 +56,7 @@ const UserProfile = (props) => {
             colors={["pink", "white", "blue", "yellow", "orange", "purple"]}
           />
         </div>
-      ) : (
+      ) : ( */}
         <div className="h-full bg-gray-200 p-8">
           <div className="bg-white rounded-lg shadow-xl pb-8">
             <div className="w-full h-[250px]">
@@ -71,7 +71,7 @@ const UserProfile = (props) => {
                 className="w-40 border-4 border-white rounded-full"
               />
               <div className="flex items-center space-x-2 mt-2">
-                <p className="text-2xl">{profile.name}</p>
+                <p className="text-2xl">{"profile.name"}</p>
                 <span className="bg-blue-500 rounded-full p-1" title="Verified">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -137,19 +137,19 @@ const UserProfile = (props) => {
                 <ul className="mt-2 text-gray-700">
                   <li className="flex border-y py-2">
                     <span className="font-bold w-24">Full name:</span>
-                    <span className="text-gray-700">{profile.name}</span>
+                    <span className="text-gray-700">{"profile.name"}</span>
                   </li>
                   <li className="flex border-b py-2">
                     <span className="font-bold w-24">Mobile:</span>
-                    <span className="text-gray-700">{profile.phone}</span>
+                    <span className="text-gray-700">{"profile.phone"}</span>
                   </li>
                   <li className="flex border-b py-2">
                     <span className="font-bold w-24">Email:</span>
-                    <span className="text-gray-700">{profile.email}</span>
+                    <span className="text-gray-700">{"profile.email"}</span>
                   </li>
                   <li className="flex border-b py-2">
                     <span className="font-bold w-24">Location:</span>
-                    <span className="text-gray-700">{profile.address}</span>
+                    <span className="text-gray-700">{"profile.address"}</span>
                   </li>
                 </ul>
               </div>
@@ -158,21 +158,21 @@ const UserProfile = (props) => {
               <div className="flex-1 bg-white rounded-lg shadow-xl p-8">
                 <h4 className="text-xl text-gray-900 font-bold">About</h4>
                 {console.log(profile)}
-                <p className="mt-2 text-gray-700">{profile.about}</p>
+                <p className="mt-2 text-gray-700">{"profile.about"}</p>
               </div>
             </div>
           </div>
           <div className="container-fluid">
             <div className="row m-3">
               <div className="w-full">
-                <Map selectedLocation={selectedLocation} />
+                {/* <Map selectedLocation={selectedLocation} /> */}
               </div>
             </div>
           </div>
         </div>
-      )}
+      {/* )} */}
     </>
   );
 };
 
-export default UserProfile;
+export default StartupProfile;
