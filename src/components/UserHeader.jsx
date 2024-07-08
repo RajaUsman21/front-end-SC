@@ -24,7 +24,10 @@ const UserHeader = () => {
     const registerStartupClickHandler = () => {
         navigate('/register-startup'); // Navigate to the startup registration form
     };
-
+    const handleLogout=()=>{
+        localStorage.removeItem('isLogin');
+        navigate('/signin')
+    }
     const profileClickHandler = () => {
         navigate('/user-profile'); // Navigate to additional profile info form
     };
@@ -42,8 +45,8 @@ const UserHeader = () => {
                         <li className='mx-[12px] cursor-pointer hover:text-white text-xl'>Contact</li>
                     </ul> */}
 
-                    <button onClick={scrollToSection} className='hidden md:block hover:bg-indigo-200 hover:text-black mx-[10px] px-4 py-2 bg-indigo-400 text-white rounded-3xl cursor-pointer'>
-                        <FontAwesomeIcon icon={faMagnifyingGlass} /> AI Search
+                    <button  className='hidden md:block hover:bg-indigo-200 hover:text-black mx-[10px] px-4 py-2 bg-indigo-400 text-white rounded-3xl cursor-pointer' onClick={handleLogout}>
+                        <FontAwesomeIcon icon={faMagnifyingGlass} /> Logout
                     </button>
 
                     <button className='hidden md:block hover:bg-indigo-200 hover:text-black mx-[10px] px-4 py-2 bg-indigo-400 text-white rounded-lg cursor-pointer' onClick={dashBoardClickHandler}>

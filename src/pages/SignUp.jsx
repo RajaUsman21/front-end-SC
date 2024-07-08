@@ -40,7 +40,7 @@ const SignupForm = () => {
             }
             else{
                 toast.success(response.data.message)
-                navigate("/")
+                navigate("/signin")
             }
             
             

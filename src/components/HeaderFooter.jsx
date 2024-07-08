@@ -1,32 +1,20 @@
-// import React, { useState } from 'react'
-import UserHeader from './UserHeader'
-import Header from './Header'
-import Footer from './Footer'
-// import { useSelector } from "react-redux"
+import React from 'react';
+import UserHeader from './UserHeader';
+import Header from './Header';
+import Footer from './Footer';
 
-function getUser() {
-    return localStorage.getItem('token')
+function isUserLoggedIn() {
+  return localStorage.getItem('isLogin') === 'true';
 }
 
 const HeaderFooterRoute = (props) => {
-    // const [user, setUser] = useState(getUser())
-
-    return (
-        <>
-            {/* {user ? <> */}
-                <UserHeader></UserHeader>
-                {props.children}
-                <Footer></Footer>
-            {/* </> : <> */}
-                {/* <Header></Header>
-                {props.children}
-                <Footer></Footer> */}
-
-        
-
-
-        </>
-    )
+  return (
+    <>
+      {isUserLoggedIn() ? <UserHeader /> : <Header />}
+      {props.children}
+      <Footer />
+    </>
+  );
 }
 
-export default HeaderFooterRoute
+export default HeaderFooterRoute;

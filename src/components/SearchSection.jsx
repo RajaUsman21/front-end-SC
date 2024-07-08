@@ -22,7 +22,7 @@ const SearchSection = (props) => {
                     </button>
                 </div>
                 <div className='mt-5'>
-                    <CardCarousel />
+                    {/* <CardCarousel /> */}
                 </div>
 
 
